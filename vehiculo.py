@@ -1,4 +1,6 @@
-﻿# Definicion de la clase Vehiculo
+# Definicion de la clase Vehiculo
 class Vehiculo:
-    # La palabra clave 'pass' indica que el bloque esta vacio y no realiza ninguna accion por el momento
-    pass
+    # Atributos de la clase con sus tipos indicados
+    patente: str
+    anio: int
+    _en_taller: bool
