@@ -1,4 +1,5 @@
 from vehiculo import Vehiculo
 
 class Auto(Vehiculo):
-    pass
+    def tarifa_hora(self) -> int:
+        return 30000

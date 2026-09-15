@@ -3,20 +3,27 @@ from auto import Auto
 from camion import Camion
 from moto import Moto
 
-v=Vehiculo("1234", 1930)
-a=Auto("1234",1930)
+# Solicitar datos al usuario controlando posibles errores con try-except
+while True:
+    try:
+        patente_ingresada = input("Ingrese la patente del auto (max 6 caracteres, sin espacios, formato Chile): ")
+        anio_ingresado = int(input("Ingrese el año del vehiculo: "))
+        
+        # Creacion del objeto: validara la patente automaticamente
+        a = Auto(patente_ingresada, anio_ingresado)
+        print("\n Vehiculo registrado con exito!")
+        print(f"Patente registrada: {a.patente_v()}")
+        break
+    except ValueError as error:
+        # Se captura el error de validacion o de tipo y se muestra el mensaje sin caer el programa
+        print(f" Error: {error} Por favor, intente nuevamente.\n")
 
+# Operaciones con el vehiculo creado
 a.ingresar_al_taller()
-print(a.patente)
+print("Estado en taller:", a._en_taller)
+print("Tarifa por hora del vehiculo: $", a.tarifa_hora())
 
-v.ingresar_al_taller()
-print("El vehiculo esta en el taller")
+a.entregar_al_cliente()
+print("Estado en taller despues de entrega:", a._en_taller)
 
-print(v.tarifa_hora())
-
-v.entregar_al_cliente()
-
-print(v._en_taller)
-
-print("La pantete del vehiculo es:",v.patente_v())
 
