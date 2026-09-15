@@ -26,6 +26,7 @@ Repositorio del proyecto y bitácora de seguimiento para el módulo **Taller Mec
 | :--- | :--- | :--- | :--- |
 | **02/09/2026** | Inicialización del Repositorio | Creación del repositorio público, configuración de Git y plantilla de bitácora. | Definir próximos requerimientos y estructura base del código. |
 | **07/09/2026** | Implementación Clase Vehículo | Creación de `vehiculo.py`, clase `Vehiculo` con atributos (`patente`, `anio`, `_en_taller`) y métodos `ingresar()` y `entregar()`. | Implementar siguientes clases y módulos del sistema. |
+| **14/09/2026** | Polimorfismo, Tarifas y Validación de Patente | Definición de método abstracto `tarifa_hora()`, implementación en `Auto` ($30.000), `Moto` ($20.000) y `Camion` ($40.000), validación de patentes según legislación chilena y control de excepciones con `try-except` en `main.py`. | Continuar con la integración de los servicios del taller. |
 
 ---
 
@@ -47,3 +48,15 @@ Repositorio del proyecto y bitácora de seguimiento para el módulo **Taller Mec
   - Documentación y comentarios explicativos por línea de código.
 - **Próximos pasos:**
   - Continuar con el modelado de las clases del taller y su integración.
+
+#### Sesión 3: Polimorfismo, Tarifas por Tipo y Validación de Patentes (14/09/2026)
+- **Actividades realizadas:**
+  - Implementación del método abstracto `tarifa_hora()` en la clase abstracta `Vehiculo`.
+  - Implementación del método `tarifa_hora()` en las subclases:
+    - `Moto`: Retorna $20.000.
+    - `Auto`: Retorna $30.000.
+    - `Camion`: Retorna $40.000.
+  - Implementación de la validación de patentes según la legislación chilena (sin espacios, máximo 6 caracteres, formatos válidos para autos, camiones y motos).
+  - Manejo de excepciones mediante bloques `try-except` (`ValueError`) en `main.py` para solicitar datos al usuario sin interrumpir la ejecución del programa ante errores de entrada.
+- **Próximos pasos:**
+  - Continuar con el modelado de clientes, órdenes de trabajo y servicios del taller mecánico.
